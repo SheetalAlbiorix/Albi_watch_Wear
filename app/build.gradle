@@ -1,0 +1,82 @@
+plugins {
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.google.gms.google.services)
+    alias(libs.plugins.dot.env)
+}
+
+android {
+    namespace 'com.wearos'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId "com.wearos"
+        minSdk 26
+        targetSdk 35
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildFeatures {
+        viewBinding = true
+        buildConfig = true
+    }
+
+    dotenv {
+        // the package name that is added to the top of your source code file: `import X.Y.Z`
+        packageName = "com.wearos"
+        // the path to the source code in your Android app module. This is probably `src/main/java` but could be something else like `src/main/kotlin`
+        sourcePath = "src/main/java/"
+    }
+
+}
+
+dependencies {
+
+    implementation libs.appcompat
+    implementation libs.material
+
+    // Play service wearable
+    implementation libs.play.services.wearable
+    implementation libs.play.services.fitness
+    implementation libs.connect.client
+
+    // Auth
+    implementation libs.play.services.auth
+
+    implementation libs.activity
+    implementation libs.constraintlayout
+    implementation libs.firebase.auth
+
+    // DotEnv
+    implementation libs.dotenv.java
+
+    // Dagger
+    implementation libs.lifecycle.livedata
+    implementation libs.lifecycle.viewmodel
+    implementation libs.dagger
+    annotationProcessor libs.hilt.compiler
+    implementation libs.retrofit
+    implementation libs.converter.gson
+    implementation libs.recyclerview
+
+    // Lifecycle
+    implementation libs.lifecycle.livedata
+    implementation libs.lifecycle.viewmodel
+
+    testImplementation libs.junit
+    androidTestImplementation libs.ext.junit
+    androidTestImplementation libs.espresso.core
+}

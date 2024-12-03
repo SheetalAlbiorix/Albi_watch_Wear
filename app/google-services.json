@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "644618596893",
+    "project_id": "wearosapp-77440",
+    "storage_bucket": "wearosapp-77440.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:644618596893:android:06f1c3fe37c2baacd68cf4",
+        "android_client_info": {
+          "package_name": "com.wearos"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAp7DKXtUm8Y70AtadVMA7upMJE4l5bMjs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
